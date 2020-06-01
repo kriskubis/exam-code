@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="da-DK">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="En personlig guide til området, lavet til Tiamotos besøgende.">
+  <meta name="author" content="Tiamoto">
+  <title>Welcome | Tiamoto</title>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;700&family=Lora:wght@600&family=Spartan&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="page-top" id="weather" style="background-position: center bottom; background-size: cover;">
+    </div>
+    <nav class="top-nav">
+      <a href="#" target="_blank" class="btn lang-option"><span>Dansk</span></a>
+      <a href="#" target="_blank" class="btn lang-option"><span>Deutsch</span></a>
+      <a href="#" target="_blank" class="btn lang-option"><span>English</span></a>
+    </nav>
+    <div  id="foreground">
+      <div id="house">
+
+      </div>
+      <a id="review-sign" title="Link to Sol og Strand's website" target="_blank" href="https://www.sologstrand.dk/sommerhuse/djursland-mols/grenaa-strand/sommerhus-6personer-52-0065.htm"><div id="review"></div></a>
+    </div>
+    <div class="result">
+      <div class="introduction">
+        <h3>A guide to the area of</h3>
+          <h1>Kaprifolievej 9</h1>
+          <p>Welcome! We are happy that you've chosen to stay at our vacation house, and wish for you to have the best stay possible. We would like to give you our personal activity recommendations for the area, but first follow the four steps below.<br><br>
+            Regards,<br>Helle and Bjarne<br><br>
+            Scroll down to proceed!</p>
+      </div>
+      <section class="filter-section">
+        
+        
+        <form id="survey-form">
+        <div class="question" id="q1">
+          <div>
+            <h4>Question 1 of 4</h4>
+            <h3>Who are you?</h3>
+            <p>To give you the best recommendations, we would like to know you a little better.<br>
+              <br>* Choose "Challenged" if you are traveling with small children or someone physically challenged.</p>
+              <br>
+              <input type="radio" name="q1" value="couple"> &nbsp; Couple <br>
+              <input type="radio" name="q1" value="group"> &nbsp; Group <br>
+              <input type="radio" name="q1" value="family"> &nbsp; Family <br>
+              <input type="radio" name="q1" value="challenged"> &nbsp; Challenged * <br>
+          </div>
+          <div class="illustration">
+            <video autoplay loop>
+              <source src="media/dad.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="question" id="q2">
+          <div>
+            <h4>Question 2 of 4</h4>
+            <h3>What are your interests?</h3>
+            <p>Choose one or more.</p>
+            <br>
+            <input type="checkbox" name="q2" value="dining"> &nbsp; Dining out <br>
+            <input type="checkbox" name="q2" value="city"> &nbsp; Exploring the city <br>
+            <input type="checkbox" name="q2" value="outdoor"> &nbsp; Relaxed outdoor activities <br>
+            <input type="checkbox" name="q2" value="amusement"> &nbsp; Amusement <br>
+            <input type="checkbox" name="q2" value="learning"> &nbsp; Learning / Sightseeing <br>
+            <input type="checkbox" name="q2" value="active"> &nbsp; Active <br>
+          </div>
+          <div class="illustration">
+            <video autoplay loop>
+              <source src="media/woman.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="question" id="q3">
+          <div>
+            <h4>Question 3 of 4</h4>
+            <h3>How far are you willing to travel?</h3>
+            <p>Not all want to travel far. Tell us the ratio in which you want to explore.</p>
+            <br>
+            <table>
+              <tr>
+                <td><input type="radio" value="5" name="q3"></td>
+                <td><input type="radio" value="20" name="q3"></td>
+                <td><input type="radio" value="40" name="q3"></td>
+              </tr>
+              <tr>
+                <td>&#60; 5 km</td>
+                <td>&#60; 20 km</td>
+                <td>&#60; 40 km</td>
+              </tr>
+            </table>
+          </div>
+          <div class="illustration">
+            <video autoplay loop>
+              <source src="media/house.mp4" type="video/mp4">
+            </video>
+          </div></div>
+        <div class="question" id="q4">
+          <div>
+            <h4>Question 4 of 4</h4>
+            <h3>What is your budget?</h3>
+            <p>$ indicates free or low-cost activities,<br>
+            $$$ indicates expensive activities.</p>
+            <br>
+            <table>
+              <tr>
+                <td><input type="radio" value="$" name="q4"></td>
+                <td><input type="radio" value="$$" name="q4"></td>
+                <td><input type="radio" value="$$$" name="q4"></td>
+              </tr>
+              <tr>
+                <td>$</td>
+                <td>$$</td>
+                <td>$$$</td>
+              </tr>
+            </table>
+          </div>
+          <div class="illustration">
+            <video autoplay loop>
+              <source src="media/deer.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="save">
+          <button class="btn btn-active" type="button" name="button" onclick="filter()">PROCEED</button>
+        </div>
+        </form>
+
+
+      </section>
+    </div>
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/weather.js"></script>
+</body>
+
+</html>

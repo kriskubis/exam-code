@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="da-DK">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="En personlig guide til området, lavet til Tiamotos besøgende.">
+  <meta name="author" content="Tiamoto">
+  <title>Activity Updates | Tiamoto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;700&family=Lora:wght@600&family=Spartan&display=swap" rel="stylesheet">
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header>
+    <nav id="admin-nav">
+      <h1 id="admin-title">Page administration</h1>
+      <button id="addBtn" class="btn btn-active">Add new content</button>
+      <button id="editBtn" class="btn">Edit or delete content</button>
+      <button id="imgBtn" class="btn">Upload images</button>
+    </nav>
+    <br>
+    <br>
+  </header>
+
+  <main>
+
+    <section id="add" class="admin-section">
+      <form id="add-form">
+
+          <fieldset>
+            <legend><h4>Main information</h4></legend>
+            <div class="column">
+              <label for="title">Activity title:</label><br>
+              <input id="title" type="text" name="title" value="Some title"><br>
+              <br>
+              <label>Audience:</label><br>
+              <input type="radio" name="aud" value="couple"> Couple <br>
+              <input type="radio" name="aud" value="group"> Group <br>
+              <input type="radio" name="aud" value="family"> Family <br>
+              <input type="radio" name="aud" value="challenged"> Challenged <br>
+              <br>
+              <label>Category:</label><br>
+              <input type="radio" name="cat" value="dining"> Dining Out <br>
+              <input type="radio" name="cat" value="city"> Exploring the City <br>
+              <input type="radio" name="cat" value="outdoor"> Relaxed Outdoor Activities <br>
+              <input type="radio" name="cat" value="amusement"> Amusement <br>
+              <input type="radio" name="cat" value="learning"> Learning <br>
+              <input type="radio" name="cat" value="active"> Active <br>
+            </div>
+            <div class="column">
+              <label>Price class:</label><br>
+              <input type="radio" name="price" value="$"> $ <br>
+              <input type="radio" name="price" value="$$"> $$ <br>
+              <input type="radio" name="price" value="$$$"> $$$ <br>
+              <br>
+              <label>Indoors / Outdoors:</label><br>
+              <input type="radio" name="indoors" value="indoors"> Indoors <br>
+              <input type="radio" name="indoors" value="outdoors"> Outdoors <br>
+              <br>
+              <label>Distance from vacation house:</label><br>
+              <input id="dist" type="text" name="dist"  value="7"> Km<br>
+              <br>
+              <label>Handicap / baby friendly:</label><br>
+              <input type="radio" name="friendly" value="yes"> yes <br>
+              <input type="radio" name="friendly" value="no"> no <br>
+          </div>
+          </fieldset>
+          <br>
+          <fieldset>
+            <legend><h4>Activity description</h4></legend>
+            <div class="column">
+              <label for="intro">Introduction:</label><br>
+              <input id="intro" type="text" name="intro" value="Some intro"><br>
+              <br>
+              <label for="ideal">Ideal for:</label><br>
+              <input id="ideal" type="text" name="ideal" value="Ideal for"><br>
+              <br>
+              <label for="why">Why we like it:</label><br>
+              <input id="why" type="text" name="why" value="Some reason"><br>
+            </div>
+            <div class="column">
+              <label for="cant">Can't miss:</label><br>
+              <input id="cant" type="text" name="cant" value="Something"><br>
+              <br>
+              <label for="good">Good to know:</label><br>
+              <input id="good" type="text" name="good" value="Good to know"><br>
+            </div>
+          </fieldset>
+          <br>
+          <fieldset>
+            <legend><h4>Address</h4></legend>
+            <div class="column">
+              <label for="street">Steet name and number:</label><br>
+              <input id="street" type="text" name="street" value="Street 15"><br>
+              <br>
+              <label for="postal">Postal code:</label><br>
+              <input id="postal" type="text" name="postal" value="8400"><br>
+              <br>
+              <label for="city">City:</label><br>
+              <input id="city" type="text" name="city" value="Grenaa"><br>
+            </div>
+            <div class="column">
+              <label for="lat">Latitude:</label><br>
+              <input id="lat" type="text" name="lat" value="56.380"><br>
+              <br>
+              <label for="lng">Longitude:</label><br>
+              <input id="lng" type="text" name="lng" value="10.500"><br>
+            </div>
+          </fieldset>
+          <br>
+          <fieldset>
+            <legend><h4>Open hours</h4></legend>
+            <div style="padding: 5%;">
+              <p>Important! Time must be written with colon seperation. If the activity is closed on specific day, leave 00:00 in the "from" and "to" field.</p><br>
+              <div class="hoursRow"><div class="hoursColumn"><h6>Monday</h6></div><div class="hoursColumn"><label for="monO">From:</label></div><div class="hoursColumn"><input id="monO" type="text" name="monO" size="8" maxlength="6" value="08:00"></div><div class="hoursColumn"><label for="monC">To:</label></div><div class="hoursColumn"><input id="monC" type="text" name="monC" size="8" maxlength="6" value="17:00"></div></div><br>
+              <br>
+              <div class="hoursRow"><div class="hoursColumn"><h6>Tuesday</h6></div><div class="hoursColumn"><label for="tueO">From:</label></div><div class="hoursColumn"><input id="tueO" type="text" name="tueO" size="8" maxlength="6" value="08:00"></div><div class="hoursColumn"><label for="tueC">To:</label></div><div class="hoursColumn"><input id="tueC" type="text" name="tueC" size="8" maxlength="6" value="17:00"></div></div><br>
+              <br>
+              <div class="hoursRow"><div class="hoursColumn"><h6>Wednesday</h6></div><div class="hoursColumn"><label for="wedO">From:</label></div><div class="hoursColumn"><input id="wedO" type="text" name="wedO" size="8" maxlength="6" value="08:00"></div><div class="hoursColumn"><label for="wedC">To:</label></div><div class="hoursColumn"><input id="wedC" type="text" name="wedC" size="8" maxlength="6" value="17:00"></div></div><br>
+              <br>
+              <div class="hoursRow"><div class="hoursColumn"><h6>Thursday</h6></div><div class="hoursColumn"><label for="thuO">From:</label></div><div class="hoursColumn"><input id="thuO" type="text" name="thuO" size="8" maxlength="6" value="08:00"></div><div class="hoursColumn"><label for="thuC">To:</label></div><div class="hoursColumn"><input id="thuC" type="text" name="thuC" size="8" maxlength="6" value="17:00"></div></div><br>
+              <br>
+              <div class="hoursRow"><div class="hoursColumn"><h6>Friday</h6></div><div class="hoursColumn"><label for="friO">From:</label></div><div class="hoursColumn"><input id="friO" type="text" name="friO" size="8" maxlength="6" value="08:00"></div><div class="hoursColumn"><label for="friC">To:</label></div><div class="hoursColumn"><input id="friC" type="text" name="friC" size="8" maxlength="6" value="17:00"></div></div><br>
+              <br>
+              <div class="hoursRow"><div class="hoursColumn"><h6>Saturday</h6></div><div class="hoursColumn"><label for="satO">From:</label></div><div class="hoursColumn"><input id="satO" type="text" name="satO" size="8" maxlength="6" value="08:00"></div><div class="hoursColumn"><label for="satC">To:</label></div><div class="hoursColumn"><input id="satC" type="text" name="satC" size="8" maxlength="6" value="17:00"></div></div><br>
+              <br>
+              <div class="hoursRow"><div class="hoursColumn"><h6>Sunday</h6></div><div class="hoursColumn"><label for="sunO">From:</label></div><div class="hoursColumn"><input id="sunO" type="text" name="sunO" size="8" maxlength="6" value="08:00"></div><div class="hoursColumn"><label for="sunC">To:</label></div><div class="hoursColumn"><input id="sunC" type="text" name="sunC" size="8" maxlength="6" value="17:00"></div></div><br>
+              <br>
+              <label for="comment">Comment to hours:</label><br>
+              <input id="comment" type="text" name="comment" value="Only open May to September."><br>
+          </div>
+          </fieldset>
+          <br>
+          <fieldset>
+            <legend><h4>Other</h4></legend>
+            <div style="padding: 5%;">
+            <label for="img">Name of image file:</label><br>
+            <p>Eg. placeholder.jpg</p>
+            <input id="img" type="text" name="img" value="placeholder.jpg"><br>
+            <br>
+            <label for="web">Activity website:</label><br>
+            <p>Eg. https://www.google.com/</p>
+            <input id="web" type="text" name="web" value="https://www.google.com/"><br>
+            <br>
+            </div>
+          </fieldset>
+          <br>
+          <div  class="save">
+            <button  class="btn" type="button" name="button" onclick="addNewActivity()">Save</button>
+          </div>
+        </form>
+    </section>
+
+    <section id="edit" class="admin-section hidden">
+      <form method="post" enctype="multipart/form-data">
+        <fieldset>
+          <legend><h4>Main information</h4></legend>
+          <div class="column">
+            <label for="title">Choose an activity to edit or delete:</label><br>
+            <div id="edit-activity"></div>
+            <br>
+            <input id="id" type="text" name="id" value="">
+            <button type="button" onclick="deleteActivity()" class="delete-btn" style="float: left; width: 100%;"><span id="delete-text">Delete</span></button>
+          </div>
+          <div class="column">
+            <label for="new-title">New title:</label><br>
+            <input id="new-title" type="text" name="new-title" value=""><br>
+            <br>
+            <label for="new-aud">New audience:</label><br>
+            <p>Write <i>couple</i>, <i>group</i>, <i>family</i> or <i>challenged</i>, in all lowercase letters.</p>
+            <input id="new-aud" type="text" name="new-aud" value=""><br>
+            <br>
+            <label for="new-cat">New category:</label><br>
+            <p>Write <i>dining</i>, <i>city</i>, <i>outdoor</i>, <i>amusement</i>, <i>learning</i> or <i>active</i>, in all lowercase letters.</p>
+            <input id="new-cat" type="text" name="new-cat" value=""><br>
+            <br>
+            <label for="new-price">New price class:</label><br>
+            <p>Write <i>$</i>, <i>$$</i> or <i>$$$</i>.</p>
+            <input id="new-price" type="text" name="new-price" value=""><br>
+            <br>
+            <label for="new-indoors">New indoors / outdoors:</label><br>
+            <p>Write <i>indoors</i> or <i>outdoors</i>, in all lowercase letters.</p>
+            <input id="new-indoors" type="text" name="new-indoors" value=""><br>
+            <br>
+            <label for="new-dist">New distance from vacation house:</label><br>
+            <input id="new-dist" type="text" name="new-dist"  value=""> Km<br>
+            <br>
+            <label for="new-friendly">Handicap / baby friendly quality:</label><br>
+            <p>Write <i>yes</i> or <i>no</i>, in all lowercase letters.</p>
+            <input id="new-friendly" type="text" name="new-friendly"  value=""><br>
+        </div>
+        </fieldset>
+        <br>
+
+        <fieldset>
+          <legend><h4>Activity description</h4></legend>
+          <div class="column">
+            <label for="new-intro">Introduction:</label><br>
+            <input id="new-intro" type="text" name="new-intro" value=""><br>
+            <br>
+            <label for="new-ideal">Ideal for:</label><br>
+            <input id="new-ideal" type="text" name="new-ideal" value=""><br>
+            <br>
+            <label for="new-why">Why we like it:</label><br>
+            <input id="new-why" type="text" name="new-why" value=""><br>
+          </div>
+          <div class="column">
+            <label for="new-cant">Can't miss:</label><br>
+            <input id="new-cant" type="text" name="new-cant" value=""><br>
+            <br>
+            <label for="new-good">Good to know:</label><br>
+            <input id="new-good" type="text" name="new-good" value=""><br>
+          </div>
+        </fieldset>
+        <br>
+
+        <fieldset>
+          <legend><h4>Address</h4></legend>
+          <div class="column">
+            <label for="new-street">Steet name and number:</label><br>
+            <input id="new-street" type="text" name="new-street" value=""><br>
+            <br>
+            <label for="new-postal">Postal code:</label><br>
+            <input id="new-postal" type="text" name="new-postal" value=""><br>
+            <br>
+            <label for="new-city">City:</label><br>
+            <input id="new-city" type="text" name="new-city" value=""><br>
+          </div>
+          <div class="column">
+            <label for="new-lat">Latitude:</label><br>
+            <input id="new-lat" type="text" name="new-lat" value=""><br>
+            <br>
+            <label for="new-lng">Longitude:</label><br>
+            <input id="new-lng" type="text" name="new-lng" value=""><br>
+          </div>
+        </fieldset>
+        <br>
+
+        <fieldset>
+          <legend><h4>Open hours</h4></legend>
+          <div style="padding: 5%;">
+            <p>Important! Time must be written with colon seperation. If the activity is closed on specific day, leave 00:00 in the "from" and "to" field.</p><br>
+            <div class="hoursRow"><div class="hoursColumn"><h6>Monday</h6></div><div class="hoursColumn"><label for="new-monO">From:</label></div><div class="hoursColumn"><input id="new-monO" type="text" name="new-monO" size="8" maxlength="6" value=""></div><div class="hoursColumn"><label for="new-monC">To:</label></div><div class="hoursColumn"><input id="new-monC" type="text" name="new-monC" size="8" maxlength="6" value=""></div></div><br>
+            <br>
+            <div class="hoursRow"><div class="hoursColumn"><h6>Tuesday</h6></div><div class="hoursColumn"><label for="new-tueO">From:</label></div><div class="hoursColumn"><input id="new-tueO" type="text" name="new-tueO" size="8" maxlength="6" value=""></div><div class="hoursColumn"><label for="new-tueC">To:</label></div><div class="hoursColumn"><input id="new-tueC" type="text" name="new-tueC" size="8" maxlength="6" value=""></div></div><br>
+            <br>
+            <div class="hoursRow"><div class="hoursColumn"><h6>Wednesday</h6></div><div class="hoursColumn"><label for="new-wedO">From:</label></div><div class="hoursColumn"><input id="new-wedO" type="text" name="new-wedO" size="8" maxlength="6" value=""></div><div class="hoursColumn"><label for="new-wedC">To:</label></div><div class="hoursColumn"><input id="new-wedC" type="text" name="new-wedC" size="8" maxlength="6" value=""></div></div><br>
+            <br>
+            <div class="hoursRow"><div class="hoursColumn"><h6>Thursday</h6></div><div class="hoursColumn"><label for="new-thuO">From:</label></div><div class="hoursColumn"><input id="new-thuO" type="text" name="new-thuO" size="8" maxlength="6" value=""></div><div class="hoursColumn"><label for="new-thuC">To:</label></div><div class="hoursColumn"><input id="new-thuC" type="text" name="new-thuC" size="8" maxlength="6" value=""></div></div><br>
+            <br>
+            <div class="hoursRow"><div class="hoursColumn"><h6>Friday</h6></div><div class="hoursColumn"><label for="new-friO">From:</label></div><div class="hoursColumn"><input id="new-friO" type="text" name="new-friO" size="8" maxlength="6" value=""></div><div class="hoursColumn"><label for="new-friC">To:</label></div><div class="hoursColumn"><input id="new-friC" type="text" name="new-friC" size="8" maxlength="6" value=""></div></div><br>
+            <br>
+            <div class="hoursRow"><div class="hoursColumn"><h6>Saturday</h6></div><div class="hoursColumn"><label for="new-satO">From:</label></div><div class="hoursColumn"><input id="new-satO" type="text" name="new-satO" size="8" maxlength="6" value=""></div><div class="hoursColumn"><label for="new-satC">To:</label></div><div class="hoursColumn"><input id="new-satC" type="text" name="new-satC" size="8" maxlength="6" value=""></div></div><br>
+            <br>
+            <div class="hoursRow"><div class="hoursColumn"><h6>Sunday</h6></div><div class="hoursColumn"><label for="new-sunO">From:</label></div><div class="hoursColumn"><input id="new-sunO" type="text" name="new-sunO" size="8" maxlength="6" value=""></div><div class="hoursColumn"><label for="new-sunC">To:</label></div><div class="hoursColumn"><input id="new-sunC" type="text" name="new-sunC" size="8" maxlength="6" value=""></div></div><br>
+            <br>
+            <label for="new-comment">Comment to hours:</label><br>
+            <input id="new-comment" type="text" name="new-comment" value=""><br>
+        </div>
+        </fieldset>
+        <br>
+
+        <fieldset>
+          <legend><h4>Other</h4></legend>
+          <div style="padding: 5%;">
+            <label for="new-img">Name of image file:</label><br>
+            <p>Eg. placeholder.jpg</p>
+            <input id="new-img" type="text" name="new-img" value=""><br>
+            <br>
+            <label for="new-web">Activity website:</label><br>
+            <p>Eg. https://www.google.com/</p>
+            <input id="new-web" type="text" name="new-web" value=""><br>
+            <br>
+            </div>
+        </fieldset>
+        <br>
+
+
+        <div  class="save">
+          <button  class="btn" type="button" name="button" onclick="editActivity()">Save</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="imgUpload" class="admin-section hidden">
+      <form action="php/img_upload.php" method="post" enctype="multipart/form-data">
+        <fieldset>
+          <legend><h4>Upload image</h4></legend>
+          <div style="padding: 5%;">
+            <label>Select Image</label><br>
+            <input type="file" name="fileToUpload" id="fileToUpload"><br>
+          </div>
+        </fieldset>
+        <div style="text-align: center; padding-top: 20px;">
+          <input type="submit" class="btn" value="Upload image" name="submit">
+        </div>
+      </form>
+    </section>
+
+</main>
+
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+
+</html>
