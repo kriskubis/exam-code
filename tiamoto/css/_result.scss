@@ -1,0 +1,472 @@
+// 88888888ba                                      88                    
+// 88      "8b                                     88    ,d               
+// 88      ,8P                                     88    88               
+// 88aaaaaa8P'  ,adPPYba,  ,adPPYba,  88       88  88  MM88MMM   
+// 88""""88'   a8P_____88  I8[    ""  88       88  88    88     
+// 88    `8b   8PP"""""""   `"Y8ba,   88       88  88    88     
+// 88     `8b  "8b,   ,aa  aa    ]8I  "8a,   ,a88  88    88,    
+// 88      `8b  `"Ybbd8"'  `"YbbdP"'   `"YbbdP'Y8  88    "Y888 
+
+// (Recommendations)
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 45px;
+    border: 1px solid #888;
+    border-radius: 30px;
+    width: 600px;
+    text-align: center;
+
+    h2 {
+        font-size: 34px;
+        line-height: 36px;
+    }
+
+    #usermail {
+        padding: 16px;
+        width: 84%;
+        background-color: rgb(232, 227, 220);
+        font-size: 18px;
+        border-radius: 15px;
+        text-align: center;
+        font-family: $font-body;
+    }
+
+    #sendMail {
+        background-color: $mint;
+    }
+
+    @include shadow
+
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+
+.page-info {
+    width: 100%;
+
+    .first-column {
+        width: 45%;
+        float: left;
+    }
+
+    .second-column {
+        width: 30%;
+        float: left;
+    }
+}
+
+#banner {
+    background-position: center;
+    background-size: cover;
+}
+
+.map {
+    background-color: $sky;
+    height: 320px;
+    width:100%;
+}
+
+#map {
+    min-height: 100%;
+    top:0;
+    bottom:0;
+    width:100%;
+}
+
+#return {
+    background-color: $city;
+}
+
+#frontBtn, #reviewBtn {
+    margin-left: 20px;
+}
+
+#mailBtn {
+    background-color: $mint;
+    margin-left: 25px;
+}
+
+#webBtn {
+    background-color: $ocean;
+    margin-left: 25px;
+}
+
+#expand-map {
+    text-align: center;
+    button {
+        background-color: white;
+        width: 70px;
+        height: 70px;
+        border-radius: 30px;
+        border: 0px solid white;
+        position: relative;
+        top: -25px;
+    }
+}
+
+#sendMail {
+    background-color: $mint;
+}
+
+.modal-decor {
+    width: 100%;
+    height: 10px;
+    right: -20px;
+    position: relative;
+    text-align: right;
+}
+
+#caprifolium {
+    width: 430px;
+}
+
+.expanded {
+    height: 500px;
+}
+
+.rotate {
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+
+p {
+    font-size: 22px;
+    line-height: 26px;
+}
+
+.first-column {
+    margin-right: 25%;
+
+    div {
+        width: 45%;
+        float: left;
+
+        &:nth-of-type(2) {
+            width: 45%;
+            padding-left: 45px;
+            float: left;
+        }
+    }
+}
+
+.first-column-act {
+    width: 70% !important;
+    margin: 0;
+    margin-right: 0;
+
+    div {
+        width: 45%;
+        float: left;
+
+        &:nth-of-type(2) {
+            width: 45%;
+            padding-left: 45px;
+            float: left;
+        }
+    }
+}
+
+.second-column {
+    padding-top: 120px;
+    
+    p {
+        margin: 5px 5px 10.5px 5px;
+    }
+}
+
+.info-wrapper {
+    width: 430px;
+    border-radius: 30px;
+    background-color: rgb(252, 252, 252);
+    position: relative;
+    top: -220px;
+
+
+    .practical-info {
+        width: 100%;
+        border-radius: 30px 30px 0 0;
+        
+        h3 {
+            text-align: center;
+            padding-top: 35px;
+            padding-bottom: 20px;
+        }
+    
+        h4 {
+            font-size: 26px;
+            padding-left: 20px;
+        }
+    
+        td, #comment {
+            font-family: $font-body;
+            font-size: 22px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        table {
+            padding-bottom: 20px;
+        }
+    }
+
+    .minimap {
+        width: 100%;
+        height: 150px;
+        border-radius: 0 0 30px 30px;
+    }
+
+    @include shadow
+}
+
+// Match category with background colour
+.dining-bg {
+    background-color: $dining;
+}
+.city-bg {
+    background-color: $city;
+}
+.outdoor-bg {
+    background-color: $outdoor;
+}
+.amusement-bg {
+    background-color: $amusement;
+}
+.learning-bg {
+    background-color: $learning;
+}
+.active-bg {
+    background-color: $active;
+}
+
+.result {
+    padding: 45px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    //justify-content: center;
+}
+
+.cat-colour {
+    height: 22px;
+    width: 22px;
+    border-radius: 15px;
+    float: left;
+    margin: 2px 0px 12.5px 10px;
+    position: relative;
+    bottom: -1px;
+
+    &:nth-of-type(1) {
+        background-color: $dining;
+    }
+    &:nth-of-type(2) {
+        background-color: $city;
+    }
+    &:nth-of-type(3) {
+        background-color: $outdoor;
+    }
+    &:nth-of-type(4) {
+        background-color: $amusement;
+    }
+    &:nth-of-type(5) {
+        background-color: $learning;
+    }
+    &:nth-of-type(6) {
+        background-color: $active;
+    }
+}
+
+
+// Card styling
+#activityGrid {
+    height: 100%;
+    padding: 0 45px 45px 45px;
+}
+
+.activityCard {
+    width: 350px;
+    height: 470px;
+    margin: 40px 40px 40px 0;
+    background-size: auto 270px;
+    border-radius: 28px;
+    border: 2px solid #cccccc;
+    float: left;
+    @include shadow;
+
+    h4 {
+        font-size: 40px;
+        text-align: right;
+        line-height: 46px;
+    }
+    h5 {
+        font-size: 32px;
+        text-align: right;
+        line-height: 36px;
+    }
+    h6 {
+        font-size: 28px;
+    }
+}
+
+.card-head {
+    height: 220px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 25px 25px 0px 0px;
+    border-right: inset 2px solid $light-grey;
+    border-top: inset 2px solid $light-grey;
+    border-left: inset 2px solid $light-grey;
+    padding: 25px;
+    color: $white;
+}
+
+.card-description {
+    height: 150px;
+    background-color: rgba(250, 250, 250, 1);
+    border-radius: 0px 0px 25px 25px;
+    border-right: inset 2px solid $light-grey;
+    border-bottom: inset 2px solid $light-grey;
+    border-left: inset 2px solid $light-grey;
+    padding: 25px;
+    color: $dark-grey;
+
+    p {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        font-size: 22px;
+        line-height: 28px;
+        margin-top: 12px;
+    }
+}
+
+.card-btn {
+    height: 70px;
+    width: 70px;
+    border-radius: 50px;
+    position: relative;
+    top: -235px;
+    left: 250px;
+    @include shadow-slim
+}
+
+@include media(">phone", "<tablet") {
+    .map {
+        height: 200px;
+    }
+
+    #expand-map {
+        display: none;
+    }
+
+    .activityCard {
+        width: 350px;
+        height: 350px;
+        margin: 20px auto;
+        float: none;
+        
+        h4 {
+            font-size: 32px;
+            line-height: 36px;
+        }
+        h5 {
+            font-size: 26px;
+            line-height: 28px;
+        }
+        h6 {
+            font-size: 26px;
+        }
+    }
+
+    .card-head {
+        height: 150px;
+    }
+
+    .card-description {
+        height: 100px;
+    
+        p {
+            -webkit-line-clamp: 3;
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+
+    .card-btn {
+        height: 70px;
+        width: 70px;
+        border-radius: 50px;
+        position: relative;
+        top: -185px;
+        left: 250px;
+        @include shadow-slim
+    }
+
+    #categories-wrapper {
+        height: 0;
+        width: 0;
+
+        div {
+            height: 0;
+            width: 0;
+        }
+
+        p {
+            font-size: 0px;
+        }
+    }
+
+    #first-column {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+
+        p {
+            width: 100%;
+        }
+    }
+}
+
+@include media(">tablet") {}
