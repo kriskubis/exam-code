@@ -38,3 +38,22 @@ function filter() {
 
     window.location.href='../result.html';
 };
+
+//----------------------- BURGER MENU -----------------------//
+$( document ).ready(function() {
+  $(".burger-menu").on("click",function(){
+        $(".nav-option").toggle();
+        $(".nav-option").toggleClass("open-burger");
+        $(".nav-option").toggleClass("btn");
+
+        if ($("#line-1").attr("points") == "4 4 4 4 40 4") {
+          $("#line-1").attr("points","4 4 22 22 40 4");
+          $("#line-2").attr("points","22 22 22 22 22 22");
+          $("#line-3").attr("points","4 40 22 22 40 40");
+        } else {
+          $("#line-1").attr("points","4 4 4 4 40 4");
+          $("#line-2").attr("points","4 22 4 22 40 22");
+          $("#line-3").attr("points","4 40 4 40 40 40");
+        };
+  });
+}); 

@@ -153,6 +153,10 @@ main {
   display: none;
 }
 
+.open-burger {
+  display: block !important;
+}
+
 @media (min-width: 321px) and (max-width: 767px) {
   h1, h2 {
     font-size: 32px;
@@ -170,6 +174,19 @@ main {
 
   html, p {
     font-size: 18px;
+  }
+
+  .nav-option {
+    display: none;
+  }
+}
+@media (min-width: 769px) {
+  .burger-menu {
+    display: none;
+  }
+
+  .nav-option {
+    display: inline-block;
   }
 }
 #admin-nav {
