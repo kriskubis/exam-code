@@ -117,10 +117,6 @@
     background-color: $city;
 }
 
-#frontBtn, #reviewBtn {
-    margin-left: 20px;
-}
-
 #mailBtn {
     background-color: $mint;
     margin-left: 25px;
@@ -470,20 +466,12 @@ p {
 }
 
 @include media(">=desktop-large") {
-    .top-nav{
-        right: 5%;
-    }
-
     #info-wrapper{
         right: -20%;
     }
 }
 
 @include media(">=desktop", "<=desktop-large"){
-    .top-nav{
-        right: 5%;
-    }
-  
     #info-wrapper{
         right: 50%;
     }
