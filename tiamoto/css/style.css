@@ -83,13 +83,6 @@ a {
   text-decoration: none;
 }
 
-.top-nav {
-  position: absolute;
-  z-index: 1;
-  top: 45px;
-  right: 45px;
-}
-
 .modal-headline {
   font-family: "Lora", serif;
   font-weight: 600;
@@ -113,6 +106,47 @@ html, body {
 
 main {
   max-width: 100%;
+}
+
+.top-nav {
+  position: absolute;
+  z-index: 1;
+  top: 45px;
+  right: 45px;
+}
+
+.burger-menu {
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  right: 20px;
+}
+
+.mobile-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.mobile-nav ul {
+  list-style: none;
+  text-align: center;
+  padding-top: 66px;
+}
+.mobile-nav ul a {
+  color: #555555;
+  font-family: "Josefine Sans", sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 42px;
+}
+
+.nav-option {
+  margin-left: 20px;
 }
 
 .btn {
@@ -153,10 +187,6 @@ main {
   display: none;
 }
 
-.open-burger {
-  display: block !important;
-}
-
 @media (min-width: 321px) and (max-width: 767px) {
   h1, h2 {
     font-size: 32px;
@@ -178,15 +208,6 @@ main {
 
   .nav-option {
     display: none;
-  }
-}
-@media (min-width: 769px) {
-  .burger-menu {
-    display: none;
-  }
-
-  .nav-option {
-    display: inline-block;
   }
 }
 #admin-nav {
@@ -536,10 +557,6 @@ main {
   background-color: #df824e;
 }
 
-#frontBtn, #reviewBtn {
-  margin-left: 20px;
-}
-
 #mailBtn {
   background-color: #93a06f;
   margin-left: 25px;
@@ -876,19 +893,11 @@ p {
   }
 }
 @media (min-width: 1920px) {
-  .top-nav {
-    right: 5%;
-  }
-
   #info-wrapper {
     right: -20%;
   }
 }
 @media (min-width: 1024px) and (max-width: 1920px) {
-  .top-nav {
-    right: 5%;
-  }
-
   #info-wrapper {
     right: 50%;
   }
