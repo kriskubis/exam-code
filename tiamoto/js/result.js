@@ -187,7 +187,6 @@ function appendActivities(acts) {
         document.getElementById('banner').style.backgroundImage = 'url(uploads/${act.data().img})';
         document.getElementById('mailBtn').classList.remove('hidden');
         document.getElementById('dist-price').classList.remove('hidden');
-        document.getElementById('sendMail').href = 'mailto:${usermail}?subject=${act.data().title}&body=${act.data().street}%0D%0A${act.data().postal}%0D%0A${act.data().city}';
         document.getElementById('webBtn').classList.remove('hidden');
         document.getElementById('webBtn').href = '${act.data().web}';
         document.getElementById('info-wrapper').classList.remove('hidden');
@@ -201,6 +200,14 @@ function appendActivities(acts) {
         document.getElementById('sun').innerHTML = '${act.data().sunO} - ${act.data().sunC}';
         document.getElementById('getDirection').href = 'https:${direction}';
         document.getElementById('mailBtn').href = '${act.data().web}';
+        document.getElementById('mailTitle').value ='${act.data().title}';
+        document.getElementById('mailStreet').value ='${act.data().street}';
+        document.getElementById('mailCity').value ='${act.data().city}';
+        document.getElementById('mailPostal').value ='${act.data().postal}';
+        document.getElementById('mailIntro').value ='${act.data().intro}';
+        document.getElementById('mailWhy').value ='${act.data().why}';
+        document.getElementById('mailDont').value ='${act.data().cant}';
+        document.getElementById('mailGood').value ='${act.data().good}';
         document.getElementById('webBtn').href = '${act.data().web}';
         document.getElementById('comment').innerHTML = '${act.data().comment}';
         document.getElementById('street').innerHTML = '${act.data().street}';
@@ -249,7 +256,6 @@ function appendActivities(acts) {
         document.getElementById('banner').style.backgroundImage = 'url(uploads/${act.data().img})';
         document.getElementById('mailBtn').classList.remove('hidden');
         document.getElementById('dist-price').classList.remove('hidden');
-        document.getElementById('sendMail').href = 'mailto:${usermail}?subject=${act.data().title}&body=${act.data().street}%0D%0A${act.data().postal}%0D%0A${act.data().city}';
         document.getElementById('webBtn').classList.remove('hidden');
         document.getElementById('webBtn').href = '${act.data().web}';
         document.getElementById('info-wrapper').classList.remove('hidden');
@@ -263,6 +269,15 @@ function appendActivities(acts) {
         document.getElementById('sun').innerHTML = '${act.data().sunO} - ${act.data().sunC}';
         document.getElementById('getDirection').href = 'https:${direction}';
         document.getElementById('mailBtn').href = '${act.data().web}';
+        document.getElementById('mailBtn').href = '${act.data().web}';
+        document.getElementById('mailTitle').value ='${act.data().title}';
+        document.getElementById('mailStreet').value ='${act.data().street}';
+        document.getElementById('mailCity').value ='${act.data().city}';
+        document.getElementById('mailPostal').value ='${act.data().postal}';
+        document.getElementById('mailIntro').value ='${act.data().intro}';
+        document.getElementById('mailWhy').value ='${act.data().why}';
+        document.getElementById('mailDont').value ='${act.data().cant}';
+        document.getElementById('mailGood').value ='${act.data().good}';
         document.getElementById('webBtn').href = '${act.data().web}';
         document.getElementById('comment').innerHTML = '${act.data().comment}';
         document.getElementById('street').innerHTML = '${act.data().street}';

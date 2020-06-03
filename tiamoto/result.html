@@ -21,19 +21,29 @@
 
     <div id="mailModal" class="modal hidden">
       <div class="modal-content">
+        <form action="php/email.php" method="post">
         <span class="close">&times;</span>
         <br>
         <h4>Send this information to your e-mail</h4>
         <br>
-        <label for="usermail" class="modal-headline">Please enter your E-mail address</label><br>
+        <label  for="usermail" class="modal-headline">Please enter your E-mail address</label><br>
         <br>
-        <input id="usermail" type="text" name="usermail" placeholder="Type here (Required)"><br>
+        <input id="usermail" type="text" name="mailTo" placeholder="Type here (Required)"><br>
+        <input class="hidden" id="mailTitle" type="text" name="mailTitle">
+        <input class="hidden" id="mailStreet" type="text" name="mailStreet">
+        <input class="hidden" id="mailCity" type="text" name="mailCity">
+        <input class="hidden" id="mailPostal" type="text" name="mailPostal">
+        <input class="hidden" id="mailIntro" type="text" name="mailIntro">
+        <input class="hidden" id="mailWhy" type="text" name="mailWhy">
+        <input class="hidden" id="mailDont" type="text" name="mailDont">
+        <input class="hidden" id="mailGood" type="text" name="mailGood">
         <br>
         <br>
-        <button type="submit" name="submit" id="sendMail" class="btn-slim"><span>Send</span></button>
+        <button type="submit" name="submit" id="sendMail" class="btn-slim">Send</button>
         <div class="modal-decor">
           <img id="caprifolium" src="media/caprifolium.svg" alt="caprifolium">
         </div>
+      </form>
       </div>
     </div>
 
