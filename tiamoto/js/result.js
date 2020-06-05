@@ -1,15 +1,18 @@
 //----------------------- LOCAL STORAGE -----------------------//
-var whoAre = [];
-var interests = [];
-var howFar = [];
-var budget = [];
+var whoAre = "unset";
+var interests = "unset";
+var howFar = "unset";
+var budget = "unset";
 
 function localStorageCheck() {
   // Search
-  whoAre = localStorage.getItem('q1');
-  interests = localStorage.getItem('q2');
-  howFar = localStorage.getItem('q3');
-  budget = localStorage.getItem('q4');
+
+  if (localStorage.getItem('q1') != null) {
+    whoAre = localStorage.getItem('q1');
+    interests = localStorage.getItem('q2');
+    howFar = localStorage.getItem('q3');
+    budget = localStorage.getItem('q4');
+  }
 
   console.log('In local storage: ' + whoAre + ', ' + interests + ', ' + howFar + ', ' + budget);
 }
@@ -161,7 +164,74 @@ function appendActivities(acts) {
 
     //----------------------- HTML TEMPLATES -----------------------//
     // If statement will filter by the search saved in local storage (see in console)
-    if ((whoAre == 'challenged') && (act.data().friendly == 'yes') && (catArray.some(r=> interests.indexOf(r) >=0)) && (distNumber <= howFar) && (priceLength <= budgetLength)) {
+    if (whoAre == "unset") {
+      htmlTemplate += `
+      <article class="activityCard" onClick="
+        var latitude = ${act.data().lat};
+        var longitude = ${act.data().lng};
+
+        new mapboxgl.Map({
+          container: 'minimap',
+          style: 'mapbox://styles/maieven/ck9lcgut327y51inypjxttjkr',
+          center: {lat: latitude, lng: longitude},
+          zoom: 14,
+          interactive: false
+        });
+        window.scrollTo(0, 0);
+        document.getElementById('return-span').innerHTML = 'Go back'; 
+        document.getElementById('activityGrid').classList.add('hidden');
+        document.getElementById('result-lead').classList.add('hidden');
+        document.getElementById('first-column').classList.add('first-column-act');
+        document.getElementById('return-div').style.width = '100%';
+        document.getElementById('expand-map').classList.add('hidden');
+        document.getElementById('map').classList.add('hidden');
+        document.getElementById('banner').style.backgroundImage = 'url(uploads/${act.data().img})';
+        document.getElementById('mailBtn').classList.remove('hidden');
+        document.getElementById('dist-price').classList.remove('hidden');
+        document.getElementById('webBtn').classList.remove('hidden');
+        document.getElementById('webLink').href = '${act.data().web}';
+        document.getElementById('info-wrapper').classList.remove('hidden');
+        document.getElementById('categories-wrapper').classList.add('hidden');
+        document.getElementById('mon').innerHTML = '${act.data().monO} - ${act.data().monC}';
+        document.getElementById('tue').innerHTML = '${act.data().tueO} - ${act.data().tueC}';
+        document.getElementById('wed').innerHTML = '${act.data().wedO} - ${act.data().wedC}';
+        document.getElementById('thu').innerHTML = '${act.data().thuO} - ${act.data().thuC}';
+        document.getElementById('fri').innerHTML = '${act.data().friO} - ${act.data().friC}';
+        document.getElementById('sat').innerHTML = '${act.data().satO} - ${act.data().satC}';
+        document.getElementById('sun').innerHTML = '${act.data().sunO} - ${act.data().sunC}';
+        document.getElementById('getDirection').href = 'https:${direction}';
+        document.getElementById('mailBtn').href = '${act.data().web}';
+        document.getElementById('mailTitle').value ='${act.data().title}';
+        document.getElementById('mailStreet').value ='${act.data().street}';
+        document.getElementById('mailCity').value ='${act.data().city}';
+        document.getElementById('mailPostal').value ='${act.data().postal}';
+        document.getElementById('mailIntro').value ='${act.data().intro}';
+        document.getElementById('mailWhy').value ='${act.data().why}';
+        document.getElementById('mailDont').value ='${act.data().cant}';
+        document.getElementById('mailGood').value ='${act.data().good}';
+        document.getElementById('webBtn').href = '${act.data().web}';
+        document.getElementById('comment').innerHTML = '${act.data().comment}';
+        document.getElementById('street').innerHTML = '${act.data().street}';
+        document.getElementById('postal').innerHTML = '${act.data().postal}';
+        document.getElementById('city').innerHTML = '${act.data().city}';
+        document.getElementById('page-title').innerHTML = '${act.data().title}';
+        document.getElementById('dist-price').innerHTML = 'Distance: ${act.data().dist} km<br>Price class: ${act.data().price}';
+        document.getElementById('page-info').innerHTML = '<div><p>${act.data().intro}</p><br><h5>Ideal for</h5><p>${act.data().ideal}</p><br><h5>Why we like it</h5><p>${act.data().why}</p><br></div><div><h5>Do not miss</h5><p>${act.data().cant}</p><br><h5>Good to know</h5><p>${act.data().good}</p></div>';" 
+        style="background-image: url('uploads/${act.data().img}');">
+        <div class="card-head">
+          <h4>${act.data().title}</h4>
+          <h5>${openClosed}<br>${act.data().dist} km</h5>
+        </div>
+        <div class="card-description">
+          <h6>${act.data().title}</h6>
+          <p>${act.data().intro}</p>
+        </div>
+        <div class="${act.data().cat}-bg card-btn">
+        <img src="media/plus.svg" alt="read more" style="width: 80%; padding: 10%; color: black;">
+        </div>
+      </article>        
+      `;
+    } else if ((whoAre == 'challenged') && (act.data().friendly == 'yes') && (catArray.some(r=> interests.indexOf(r) >=0)) && (distNumber <= howFar) && (priceLength <= budgetLength)) {
       console.log('"' + act.data().title + '" is applicable for this search.')
 
       htmlTemplate += `
@@ -177,7 +247,7 @@ function appendActivities(acts) {
           interactive: false
         });
         window.scrollTo(0, 0);
-        document.getElementById('return').innerHTML = '<h4>Go back</h4>'; 
+        document.getElementById('return-span').innerHTML = 'Go back';  
         document.getElementById('activityGrid').classList.add('hidden');
         document.getElementById('result-lead').classList.add('hidden');
         document.getElementById('first-column').classList.add('first-column-act');
@@ -246,7 +316,7 @@ function appendActivities(acts) {
           interactive: false
         });
         window.scrollTo(0, 0);
-        document.getElementById('return').innerHTML = '<h4>Go back</h4>'; 
+        document.getElementById('return-span').innerHTML = 'Go back'; 
         document.getElementById('activityGrid').classList.add('hidden');
         document.getElementById('result-lead').classList.add('hidden');
         document.getElementById('first-column').classList.add('first-column-act');
@@ -317,7 +387,7 @@ function returnBtn() {
     document.getElementById('dist-price').innerHTML = '';
     document.getElementById('page-info').innerHTML = '<p>We’ve listed our top picks based on your answers below.<br><br>Don’t like what you see? You can start over and choose new categories.</p>';
     document.getElementById('dist-price').classList.add('hidden');
-    document.getElementById('return').innerHTML = '<h4>Try again</h4>'; 
+    document.getElementById('return-span').innerHTML = '<h4>Try again</h4>'; 
     document.getElementById('activityGrid').classList.remove('hidden');
     document.getElementById('expand-map').classList.remove('hidden');
     document.getElementById('map').classList.remove('hidden');

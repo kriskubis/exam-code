@@ -17,6 +17,13 @@ var firebaseConfig = {
   const db = firebase.firestore();
   const actRef = db.collection("activities");
 
+  //----------------------- ALL ACTIVITIES -----------------------//
+  $( document ).ready(function() {
+    $(".all-activities").on("click",function(){
+      localStorage.setItem('q1', 'unset');
+    });
+  }); 
+
 //----------------------- FILTER -----------------------//
 $("input[type=checkbox]").on("change", function(){
   var arr = [];
