@@ -5,7 +5,6 @@ var howFar = "unset";
 var budget = "unset";
 
 function localStorageCheck() {
-  // Search
 
   if (localStorage.getItem('q1') != null) {
     whoAre = localStorage.getItem('q1');
